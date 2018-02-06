@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, render_template
-app = Flask(__name__)
+from flask_cors import CORS
 import json
+
+app = Flask(__name__)
+CORS(app)
 
 with open('data/graph.json') as f:
     graph = json.load(f)
